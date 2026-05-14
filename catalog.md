@@ -67,9 +67,9 @@ Active decks kept in their original reveal.js form under
 `/talks/`. Image and script paths are absolute, so they resolve
 cleanly from any URL.
 
-- [Representation Learning on Graphs with Jumping Knowledge Networks]({{ '/talks/jumping_networks.html' | relative_url }})
+- [Representation Learning on Graphs with Jumping Knowledge Networks]({{ '/talks/jumping_networks/' | relative_url }})
   — class project for COMP 766: Graph Representation Learning.
-- [Adversarial Opinion Dynamics]({{ '/talks/adversarial_opinion_dynamics.html' | relative_url }})
+- [Adversarial Opinion Dynamics]({{ '/talks/adversarial_opinion_dynamics/' | relative_url }})
   — minimax formulations and mixed-graph problems for opinion-dynamics models.
 
 ## Archive
@@ -78,10 +78,10 @@ Legacy decks preserved in their original form under
 `/archive/YEAR/track/`. Paths have been normalized so the decks
 still render from the slides site.
 
-- 2017 / meetup: [Implementando ojos a tu chatbot (original)]({{ '/archive/2017/meetup/eyes_on_bot.html' | relative_url }})
+- 2017 / meetup: [Implementando ojos a tu chatbot (original)]({{ '/archive/2017/meetup/eyes_on_bot/' | relative_url }})
   — raw 2017 deck used at the Bots LATAM meetup; the unified version
   above is its refreshed Jekyll counterpart.
-- 2019 / research: [Linearized Belief Propagation]({{ '/archive/2019/research/lin-sp-bp.html' | relative_url }})
+- 2019 / research: [Linearized Belief Propagation]({{ '/archive/2019/research/lin-sp-bp/' | relative_url }})
   — semantic walkthrough of Gatterbauer et al.
-- 2021 / research: [On the Challenges of Predicting Microscopic Dynamics of Online Conversations]({{ '/archive/2021/research/micro-dynamics/microdynamics.html' | relative_url }})
+- 2021 / research: [On the Challenges of Predicting Microscopic Dynamics of Online Conversations]({{ '/archive/2021/research/micro-dynamics/microdynamics/' | relative_url }})
   — nbconvert-generated reveal deck from a 2021 research talk.
