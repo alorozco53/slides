@@ -1,12 +1,14 @@
 ---
 layout: page
 title: Examples
-subtitle: Two presentations that ship with the template
+subtitle: Two template decks to start from
 ---
 
-The template includes two example decks under `_presentations/`. Each one
-demonstrates a different authoring style and a different mix of reveal.js
-plugins, so you can pick the closest starting point and copy it.
+The template ships with two example decks under `_presentations/`. Each
+one demonstrates a different authoring style and a different mix of
+reveal.js plugins, so you can pick the closest starting point and copy
+it. Looking for the full deck library instead? See
+[Catalog]({{ '/catalog' | relative_url }}).
 
 ## HTML-Section Example
 

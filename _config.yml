@@ -22,6 +22,8 @@ collections:
 navbar-links:
   - name: "Home"
     url: ""
+  - name: "Catalog"
+    url: "catalog"
   - name: "Examples"
     url: "examples"
 
