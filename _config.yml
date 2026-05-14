@@ -6,7 +6,7 @@ url: ""
 baseurl: ""
 
 # Name of website
-title: "Reveal.js + Jekyll Template"
+title: "slides — A Reveal.js + Jekyll template"
 
 # Short description of your site
 description: "A minimalistic Jekyll-based framework for authoring reveal.js presentations."

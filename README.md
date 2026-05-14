@@ -1,4 +1,6 @@
-# Reveal.js + Jekyll Template
+# slides
+
+A Reveal.js + Jekyll template.
 
 A minimalistic, locally-launchable Jekyll project for authoring
 [reveal.js](https://revealjs.com/) presentations. Each deck is a file in the
@@ -28,7 +30,7 @@ config skeleton, and two example decks.
 
 ```bash
 git clone <your-fork-or-this-repo>.git
-cd reveal-jekyll-template
+cd slides
 make install        # bundle install
 make run            # bundle exec jekyll serve ...
 ```
