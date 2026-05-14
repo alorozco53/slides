@@ -1,0 +1,68 @@
+---
+title: Example Markdown Deck
+subtitle: Authoring slides with Markdown inside Reveal.js sections
+reveal:
+  theme: night
+  transition: slide
+  menu: true
+  highlight: true
+  markdown: true
+  math: false
+  home_link: true
+  home_url: '/'
+  home_label: 'Back to Home'
+---
+
+<section data-markdown>
+  <textarea data-template>
+## Markdown-Driven Deck
+
+Each slide is a `<section data-markdown>` block.
+
+Press **Space** or **→** to advance.
+  </textarea>
+</section>
+
+<section data-markdown>
+  <textarea data-template>
+## Why Markdown?
+
+- Faster to author than raw HTML
+- Lists, headings, emphasis, links — all work
+- Code fences highlight via the `highlight` plugin
+  </textarea>
+</section>
+
+<section data-markdown>
+  <textarea data-template>
+## Code Example
+
+```python
+def hello(name: str) -> str:
+    return f"Hello, {name}!"
+```
+  </textarea>
+</section>
+
+<section data-markdown>
+  <textarea data-template>
+## Plugins Enabled
+
+- `menu`: open the slide menu (top-left icon)
+- `notes`: press **S** to open the speaker view
+- `zoom`: hold **Alt** and click to zoom
+- `chalkboard`: press **b** for whiteboard, **c** to draw
+  </textarea>
+</section>
+
+<section data-markdown>
+  <textarea data-template>
+## Authoring Your Own
+
+1. Drop a new `.html` file in `_presentations/`
+2. Add Reveal config in the YAML front matter
+3. Write `<section>` blocks (HTML or Markdown)
+
+That's it — `make run` and you're live.
+  </textarea>
+</section>

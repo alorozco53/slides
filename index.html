@@ -1,0 +1,38 @@
+---
+layout: page
+title: Reveal.js + Jekyll Template
+subtitle: A minimalistic framework for authoring presentations
+use-site-title: true
+---
+
+<p>
+  This repository is a minimalistic, locally-launchable Jekyll project wired up
+  to <a href="https://revealjs.com/" target="_blank" rel="noopener">reveal.js</a>.
+  Clone it, run <code>make install &amp;&amp; make run</code>, and start writing
+  slide decks as Jekyll collection entries in <code>_presentations/</code>.
+</p>
+
+<p>
+  Each deck is configured through YAML front matter, so the same engine powers
+  HTML-section decks and Markdown-driven decks side by side. The bundled
+  reveal.js distribution ships with the full plugin stack: <strong>chalkboard</strong>
+  for live annotation, <strong>menu</strong> for slide navigation,
+  <strong>math</strong> via MathJax, <strong>highlight</strong> for code
+  syntax, <strong>zoom</strong>, <strong>notes</strong>, and theme switching
+  across the eleven Reveal.js themes.
+</p>
+
+<p>
+  The two example decks below illustrate both authoring styles. Use them as
+  starting points and replace with your own content.
+</p>
+
+<div class="text-center" style="margin-top: 1.5em;">
+  <a class="btn btn-primary" href="{{ '/presentations/standardization-prototype/' | relative_url }}">
+    HTML-Section Example
+  </a>
+  &nbsp;
+  <a class="btn btn-primary" href="{{ '/presentations/example-markdown-deck/' | relative_url }}">
+    Markdown Example
+  </a>
+</div>

@@ -1,0 +1,9 @@
+*~
+node_modules/
+# OS X auto-generated file
+*.DS_Store
+_site/
+*.ipynb_checkpoints/
+.jekyll-metadata
+/vendor/
+/.bundle/
