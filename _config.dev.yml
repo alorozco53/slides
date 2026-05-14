@@ -1,5 +1,5 @@
 # Development-specific configuration overrides
 # This file is layered on top of _config.yml when running Jekyll locally.
 
-url: "http://localhost:4000"
+url: "http://localhost:4001"
 baseurl: ""
