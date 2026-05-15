@@ -1,0 +1,186 @@
+---
+layout: reveal
+title: "Vertical Template"
+subtitle: "Drill down within a topic, then advance to the next"
+presenter: "Your name, affiliation, date"
+reveal:
+  theme: night
+  transition: slide
+  backgroundTransition: fade
+  controls: true
+  progress: true
+  history: true
+  center: true
+
+  menu: true
+  menu_config:
+    side: left
+    transitions: true
+    openButton: true
+
+  chalkboard: true
+  chalkboard_config:
+    theme: chalkboard
+    toggleChalkboardButton: true
+    toggleNotesButton: true
+
+  math: true
+  math_config:
+    mathjax: 'https://cdn.mathjax.org/mathjax/latest/MathJax.js'
+    config: 'TeX-AMS_HTML-full'
+
+  markdown: true
+  highlight: true
+  zoom: true
+  notes: true
+
+  home_link: true
+  home_url: '/'
+  home_label: 'Back to Home'
+  links:
+    - label: 'Paper'
+      url: 'https://example.org/paper'
+    - label: 'Code'
+      url: 'https://github.com/example/repo'
+---
+
+<!-- Column 1: one topic, many vertical drilldowns -->
+<section>
+  <section data-transition="fade"
+           data-background-color="#03040f"
+           data-background-image="/img/network3.gif"
+           data-background-size="cover"
+           data-background-opacity="0.25"
+           data-menu-title="Title">
+    <div class="title-card">
+      <h1 data-auto-animate>Vertical Template</h1>
+      <h3 data-auto-animate>Drill down within a topic</h3>
+      <p class="attribution">Your name &mdash; venue &mdash; date</p>
+    </div>
+    <p class="hint">Press <strong>&darr;</strong> to drill in &middot; <strong>&rarr;</strong> to skip topics</p>
+  </section>
+
+  <section data-background-color="#050816" data-menu-title="Why vertical?">
+    <h2>When this shape fits</h2>
+    <ul>
+      <li class="fragment">One topic, many layers of detail.</li>
+      <li class="fragment">Optional drilldown your audience can <em>skip</em> by pressing <strong>&rarr;</strong>.</li>
+      <li class="fragment">Q&amp;A backup material that lives below the main slide.</li>
+    </ul>
+  </section>
+
+  <!-- data-auto-animate: same element morphs across slides -->
+  <section data-background-color="#071323" data-auto-animate data-menu-title="Idea v1">
+    <h2>Build up an idea</h2>
+    <p data-id="thought">A model is a <strong>point</strong> in parameter space.</p>
+  </section>
+
+  <section data-background-color="#08182e" data-auto-animate data-menu-title="Idea v2">
+    <h2>Build up an idea</h2>
+    <p data-id="thought">A model is a <strong>point</strong> in parameter space &mdash; training traces a <strong>path</strong>.</p>
+  </section>
+
+  <section data-background-color="#0a1f3e" data-auto-animate data-menu-title="Idea v3">
+    <h2>Build up an idea</h2>
+    <p data-id="thought">A model is a <strong>point</strong> in parameter space &mdash; training traces a <strong>path</strong> shaped by data, loss, and inductive bias.</p>
+    <p class="equation fragment">$$\theta_{t+1} = \theta_t - \eta \nabla_\theta \mathcal{L}(\theta_t)$$</p>
+  </section>
+
+  <section data-background-color="#0c2a52" data-transition="convex" data-menu-title="Takeaway">
+    <h2>Takeaway</h2>
+    <blockquote class="callout">
+      Geometry of the path &mdash; not just the endpoint &mdash; tells you about generalization.
+    </blockquote>
+    <aside class="notes">
+      This is the punchline of the column. Use it to anchor the next topic.
+    </aside>
+  </section>
+</section>
+
+<!-- Column 2: short transition column -->
+<section>
+  <section data-transition="fade" data-background-color="#102542" data-menu-title="A second topic">
+    <h2>Bridging to the next topic</h2>
+    <p>Press <strong>&rarr;</strong> to enter a fresh column.</p>
+  </section>
+
+  <section data-background-color="#143559" data-menu-title="Code aside">
+    <h3>An optional drilldown</h3>
+    <pre><code class="language-python" data-trim>
+# Subslides are perfect for technical asides
+def step(theta, batch, lr=1e-3):
+    grad = compute_grad(theta, batch)
+    return theta - lr * grad
+    </code></pre>
+    <p class="muted">If your audience doesn't need this, they press <strong>&rarr;</strong> and miss nothing.</p>
+  </section>
+</section>
+
+<!-- Column 3: closing -->
+<section data-background-color="#0a1428" data-transition="concave" data-menu-title="Closing">
+  <h2>Wrap-up</h2>
+  <ul>
+    <li class="fragment">Columns = topics; subslides = depth.</li>
+    <li class="fragment"><code>data-auto-animate</code> morphs the same element across slides.</li>
+    <li class="fragment"><code>data-menu-title</code> gives each slide a label in the side menu.</li>
+  </ul>
+  <p class="muted fragment">Need many topics &times; many subslides? See the <a href="{{ '/presentations/template-grid/' | relative_url }}">grid template</a>.</p>
+</section>
+
+<style>
+  .title-card {
+    padding: 1.5rem 1.8rem;
+    border-radius: 14px;
+    background: rgba(8, 14, 32, 0.55);
+    border: 1px solid rgba(120, 180, 255, 0.35);
+    backdrop-filter: blur(4px);
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .title-card h1 {
+    font-size: 2.4em;
+    line-height: 1.08;
+    margin-bottom: 0.3em;
+  }
+
+  .title-card h3 {
+    color: #b6cdf0;
+    font-weight: 400;
+    margin-bottom: 0.7em;
+  }
+
+  .attribution {
+    color: #8fa6c7;
+    font-size: 0.85em;
+    margin: 0;
+  }
+
+  .hint {
+    margin-top: 1.4rem;
+    color: #c1d4ec;
+    font-size: 0.85em;
+  }
+
+  .equation {
+    background: rgba(160, 210, 255, 0.1);
+    border-radius: 8px;
+    padding: 0.5rem 0.8rem;
+    margin: 0.7rem auto;
+    max-width: 760px;
+  }
+
+  .callout {
+    border-left: 4px solid #5ad1c8;
+    background: rgba(90, 209, 200, 0.08);
+    padding: 0.9rem 1.1rem;
+    margin: 0.6rem auto;
+    max-width: 820px;
+    text-align: left;
+    font-style: italic;
+  }
+
+  .muted {
+    color: #8fa6c7;
+  }
+</style>

@@ -22,20 +22,54 @@ use-site-title: true
   across the eleven Reveal.js themes.
 </p>
 
+<h2>Starter templates</h2>
+
 <p>
-  The two example decks below illustrate both authoring styles. Use them as
-  starting points and replace with your own content.
+  Three structural starter decks live in <code>_presentations/</code>. Each
+  one wires up the full chrome (back-to-home, paper/code quick-links, menu,
+  chalkboard, math, code highlighting) and shows off a different deck
+  <em>shape</em>. Pick the closest match, copy the file, and edit.
 </p>
 
 <div class="text-center" style="margin-top: 1.5em;">
-  <a class="btn btn-primary" href="{{ '/presentations/standardization-prototype/' | relative_url }}">
-    HTML-Section Example
+  <a class="btn btn-primary" href="{{ '/presentations/template-horizontal/' | relative_url }}">
+    Horizontal
   </a>
   &nbsp;
-  <a class="btn btn-primary" href="{{ '/presentations/example-markdown-deck/' | relative_url }}">
-    Markdown Example
+  <a class="btn btn-primary" href="{{ '/presentations/template-vertical/' | relative_url }}">
+    Vertical
+  </a>
+  &nbsp;
+  <a class="btn btn-primary" href="{{ '/presentations/template-grid/' | relative_url }}">
+    Grid
   </a>
 </div>
+
+<ul style="margin-top: 1.4em;">
+  <li>
+    <strong>Horizontal</strong> &mdash; a flat row of slides, no nesting.
+    Short single-topic talks. Press <kbd>&rarr;</kbd> to advance.
+  </li>
+  <li>
+    <strong>Vertical</strong> &mdash; one topic, stacked subslides. Optional
+    drilldowns or Q&amp;A backup material; press <kbd>&darr;</kbd> to drill,
+    <kbd>&rarr;</kbd> to skip.
+  </li>
+  <li>
+    <strong>Grid</strong> &mdash; chapters &times; subslides with
+    color-scaled section titles (teal &rarr; blue &rarr; gold &rarr;
+    purple). The workhorse paper-talk arc:
+    Intro &rarr; Method &rarr; Evidence &rarr; Conclusions.
+  </li>
+</ul>
+
+<p style="margin-top: 1em; color: #888; font-size: 0.95em;">
+  Looking for raw authoring-style references instead?
+  <a href="{{ '/presentations/standardization-prototype/' | relative_url }}">HTML-section</a>
+  and
+  <a href="{{ '/presentations/example-markdown-deck/' | relative_url }}">Markdown</a>
+  examples remain bundled.
+</p>
 
 <hr style="margin: 2.5em 0 1.5em;">
 

@@ -1,0 +1,175 @@
+---
+layout: reveal
+title: "Horizontal Template"
+subtitle: "A flat row of slides — no vertical nesting"
+presenter: "Your name, affiliation, date"
+reveal:
+  theme: night
+  transition: slide
+  backgroundTransition: fade
+  controls: true
+  progress: true
+  history: true
+  center: true
+
+  menu: true
+  menu_config:
+    side: left
+    transitions: true
+    openButton: true
+
+  chalkboard: true
+  chalkboard_config:
+    theme: chalkboard
+    toggleChalkboardButton: true
+    toggleNotesButton: true
+
+  math: true
+  math_config:
+    mathjax: 'https://cdn.mathjax.org/mathjax/latest/MathJax.js'
+    config: 'TeX-AMS_HTML-full'
+
+  markdown: true
+  highlight: true
+  zoom: true
+  notes: true
+
+  home_link: true
+  home_url: '/'
+  home_label: 'Back to Home'
+  links:
+    - label: 'Paper'
+      url: 'https://example.org/paper'
+    - label: 'Code'
+      url: 'https://github.com/example/repo'
+    - label: 'Demo'
+      url: 'https://example.org/demo'
+---
+
+<!-- 1. Title slide ─ background image + soft overlay + title card -->
+<section data-transition="fade"
+         data-background-color="#03040f"
+         data-background-image="/img/network3.gif"
+         data-background-size="cover"
+         data-background-opacity="0.25"
+         data-menu-title="Title">
+  <div class="title-card">
+    <h1 data-auto-animate>Horizontal Template</h1>
+    <h3 data-auto-animate>A flat row of slides</h3>
+    <p class="attribution">Your name &mdash; venue &mdash; date</p>
+  </div>
+  <aside class="notes">
+    Speaker notes appear in the speaker view (press <strong>S</strong>).
+    The title card pattern keeps the headline readable over any background.
+  </aside>
+</section>
+
+<!-- 2. When to use this template -->
+<section data-background-color="#050816" data-transition="slide">
+  <h2>When this shape fits</h2>
+  <ul>
+    <li class="fragment">Short talks &mdash; you want linear flow, no branching.</li>
+    <li class="fragment">Single topic, sequential points, minimal hierarchy.</li>
+    <li class="fragment">When you'd rather press &rarr; than navigate a tree.</li>
+  </ul>
+  <p class="muted fragment">If your deck has chapters or appendices, use the <a href="{{ '/presentations/template-grid/' | relative_url }}">grid template</a> instead.</p>
+</section>
+
+<!-- 3. Code highlighting -->
+<section data-background-color="#0b1024" data-transition="convex">
+  <h2>Code blocks &mdash; highlight plugin</h2>
+  <pre><code class="language-python" data-trim>
+def loss(theta, batch):
+    """Cross-entropy loss with L2 regularization."""
+    logits = forward(theta, batch.x)
+    return cross_entropy(logits, batch.y) + 1e-4 * (theta ** 2).sum()
+  </code></pre>
+  <p class="muted">Wrap source in <code>&lt;pre&gt;&lt;code class="language-X"&gt;</code>. Languages: python, js, bash, yaml, &hellip;</p>
+</section>
+
+<!-- 4. Math -->
+<section data-background-color="#071323" data-transition="slide">
+  <h2>Math &mdash; MathJax</h2>
+  <p class="equation">$$\mathcal{L}(\theta) = \mathbb{E}_{(x,y)\sim\mathcal{D}}\big[\ell(f_\theta(x), y)\big] + \lambda \|\theta\|^2_2$$</p>
+  <ul>
+    <li class="fragment">Inline form: \(\nabla_\theta \mathcal{L}\) works mid-paragraph.</li>
+    <li class="fragment">Display form: wrap in <code>$$ &hellip; $$</code> for full equations.</li>
+  </ul>
+</section>
+
+<!-- 5. Image-as-background slide -->
+<section data-background-image="/img/network3.gif"
+         data-background-size="cover"
+         data-background-position="center"
+         data-background-opacity="0.55"
+         data-transition="zoom"
+         data-menu-title="Visual interlude">
+  <div class="hero-overlay">
+    <h2>Image-as-background</h2>
+    <p>Set <code>data-background-image</code> + <code>data-background-size: cover</code>.</p>
+    <p class="muted">Pair with a translucent card so text stays readable.</p>
+  </div>
+</section>
+
+<!-- 6. Closing -->
+<section data-background-color="#0a1428" data-transition="concave">
+  <h2>Next steps</h2>
+  <ol>
+    <li class="fragment">Copy this file in <code>_presentations/</code> and rename it.</li>
+    <li class="fragment">Edit front matter (title, paper/code links, theme).</li>
+    <li class="fragment">Replace each <code>&lt;section&gt;</code> with your content.</li>
+    <li class="fragment"><code>make run</code> &rarr; <code>localhost:4001/presentations/&lt;name&gt;/</code>.</li>
+  </ol>
+  <p class="fragment muted">Looking for nesting? Use the <a href="{{ '/presentations/template-vertical/' | relative_url }}">vertical</a> or <a href="{{ '/presentations/template-grid/' | relative_url }}">grid</a> templates.</p>
+</section>
+
+<style>
+  .title-card {
+    padding: 1.5rem 1.8rem;
+    border-radius: 14px;
+    background: rgba(8, 14, 32, 0.55);
+    border: 1px solid rgba(120, 180, 255, 0.35);
+    backdrop-filter: blur(4px);
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .title-card h1 {
+    font-size: 2.4em;
+    line-height: 1.08;
+    margin-bottom: 0.3em;
+  }
+
+  .title-card h3 {
+    color: #b6cdf0;
+    font-weight: 400;
+    margin-bottom: 0.7em;
+  }
+
+  .attribution {
+    color: #8fa6c7;
+    font-size: 0.85em;
+    margin: 0;
+  }
+
+  .hero-overlay {
+    background: rgba(5, 9, 22, 0.7);
+    border: 1px solid rgba(180, 200, 240, 0.25);
+    border-radius: 12px;
+    padding: 1.4rem 1.6rem;
+    max-width: 760px;
+    margin: 0 auto;
+  }
+
+  .equation {
+    background: rgba(160, 210, 255, 0.08);
+    border-radius: 8px;
+    padding: 0.5rem 0.8rem;
+    margin: 0.6rem auto;
+    max-width: 920px;
+  }
+
+  .muted {
+    color: #8fa6c7;
+  }
+</style>

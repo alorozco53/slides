@@ -12,7 +12,9 @@ A minimalistic, locally-launchable Jekyll project for authoring
 A starter template, not a finished site. It strips the personal content out of
 [`alorozco53.github.io`](https://github.com/alorozco53/alorozco53.github.io)
 and keeps only the engine: layouts, includes, the reveal.js distribution, the
-config skeleton, and two example decks.
+config skeleton, and three structural starter templates (`template-horizontal`,
+`template-vertical`, `template-grid`) alongside a small set of migrated
+example decks.
 
 ## Features
 
@@ -41,6 +43,23 @@ Then open <http://localhost:4000>.
 
 Drop a new file into `_presentations/` — the file becomes a slide deck served
 at `/presentations/<filename>/`.
+
+### Start from a structural template
+
+Three starter templates ship under `_presentations/`. Each wires up the full
+chrome (back-to-home, menu, chalkboard, math, code highlighting) and shows
+off a different deck shape — pick the closest match and copy the file:
+
+| Template | Shape | Use it for |
+|----------|-------|------------|
+| [`template-horizontal.html`](_presentations/template-horizontal.html) | flat row, no nesting | short, sequential, single-topic talks |
+| [`template-vertical.html`](_presentations/template-vertical.html) | stacked subslides within one topic | optional drilldowns / Q&A backup |
+| [`template-grid.html`](_presentations/template-grid.html) | chapters × subslides, color-scaled section titles | the canonical paper-talk arc (Intro → Method → Evidence → Conclusions) |
+
+Each template is self-contained — the per-deck `<style>` block at the bottom
+is fully customizable per deck. The homepage ([`index.html`](index.html))
+links to all three with live previews. For raw authoring patterns, the two
+examples below are still the minimal references.
 
 ### HTML-section style
 
@@ -126,8 +145,12 @@ _includes/
   head.html, header.html, footer.html, footer-scripts.html, nav.html, ...
   presentation/         # head/navbar/scripts specific to reveal decks
 _presentations/
-  standardization-prototype.html  # HTML-section example
-  example-markdown-deck.html      # Markdown example
+  template-horizontal.html        # starter: flat row of slides
+  template-vertical.html          # starter: stacked subslides within one topic
+  template-grid.html              # starter: chapters × subslides (paper-talk)
+  standardization-prototype.html  # HTML-section authoring example
+  example-markdown-deck.html      # Markdown authoring example
+  # ... plus migrated example decks listed in catalog.md
 css/                    # main.css, reveal.css, theme/ (all 11 themes)
 js/                     # reveal.js + jquery + bootstrap
 lib/                    # reveal.js helpers (head.min.js, classList.js, fonts)
