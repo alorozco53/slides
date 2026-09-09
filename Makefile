@@ -1,3 +1,5 @@
+.DEFAULT_GOAL := live
+
 update:
 	rm -rf _site/
 	rm -rf Gemfile.lock
@@ -9,6 +11,9 @@ install:
 
 run:
 	bundle exec jekyll serve --host=0.0.0.0 --port 4001 --config _config.yml,_config.dev.yml
+
+live:
+	bundle exec jekyll serve --host=0.0.0.0 --port 4001 --config _config.yml,_config.dev.yml --livereload
 
 clean:
 	rm -rf _site/
