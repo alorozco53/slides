@@ -41,11 +41,14 @@
         { name: 'Moon', theme: '{{ "/css/theme/moon.css" | relative_url }}' },
         { name: 'Solarized', theme: '{{ "/css/theme/solarized.css" | relative_url }}' }
       ],
-      {% if page.reveal.chalkboard != false %}
       custom: [
-        { title: 'Drawing Tools', icon: '<i class="fa fa-pencil"></i>', content: '<ul class="slide-menu-items"><li class="slide-menu-item"><a href="#" onclick="RevealChalkboard.toggleNotesCanvas(); return false;"><i class="fa fa-pencil" style="width:1em;margin-right:0.5em;"></i>Toggle drawing on slides</a></li><li class="slide-menu-item"><a href="#" onclick="RevealChalkboard.toggleChalkboard(); return false;"><i class="fa fa-pencil-square-o" style="width:1em;margin-right:0.5em;"></i>Toggle whiteboard</a></li><li class="slide-menu-item"><a href="#" onclick="RevealChalkboard.clear(); return false;"><i class="fa fa-trash" style="width:1em;margin-right:0.5em;"></i>Clear drawings</a></li><li class="slide-menu-item"><a href="#" onclick="RevealChalkboard.reset(); return false;"><i class="fa fa-refresh" style="width:1em;margin-right:0.5em;"></i>Reset slide drawings</a></li><li class="slide-menu-item"><a href="#" onclick="RevealChalkboard.download(); return false;"><i class="fa fa-download" style="width:1em;margin-right:0.5em;"></i>Download drawings</a></li></ul>' }
+        {% if page.reveal.chalkboard != false %}
+        { title: 'Drawing Tools', icon: '<i class="fa fa-pencil"></i>', content: '<ul class="slide-menu-items"><li class="slide-menu-item"><a href="#" onclick="RevealChalkboard.toggleNotesCanvas(); return false;"><i class="fa fa-pencil" style="width:1em;margin-right:0.5em;"></i>Toggle drawing on slides</a></li><li class="slide-menu-item"><a href="#" onclick="RevealChalkboard.toggleChalkboard(); return false;"><i class="fa fa-pencil-square-o" style="width:1em;margin-right:0.5em;"></i>Toggle whiteboard</a></li><li class="slide-menu-item"><a href="#" onclick="RevealChalkboard.clear(); return false;"><i class="fa fa-trash" style="width:1em;margin-right:0.5em;"></i>Clear drawings</a></li><li class="slide-menu-item"><a href="#" onclick="RevealChalkboard.reset(); return false;"><i class="fa fa-refresh" style="width:1em;margin-right:0.5em;"></i>Reset slide drawings</a></li><li class="slide-menu-item"><a href="#" onclick="RevealChalkboard.download(); return false;"><i class="fa fa-download" style="width:1em;margin-right:0.5em;"></i>Download drawings</a></li></ul>' },
+        {% endif %}
+        {% if page.reveal.print_button != false %}
+        { title: 'Export', icon: '<i class="fa fa-print"></i>', content: '<ul class="slide-menu-items"><li class="slide-menu-item"><a href="?print-pdf"><i class="fa fa-print" style="width:1em;margin-right:0.5em;"></i>Print-friendly view</a></li><li class="slide-menu-item" style="opacity:0.7;font-size:0.85em;padding-top:0.4em;">Then press <kbd>Ctrl/Cmd&nbsp;+&nbsp;P</kbd> &rarr; Save as PDF.</li></ul>' }
+        {% endif %}
       ]
-      {% endif %}
     };
     {% endif %}
 
@@ -113,6 +116,14 @@
 
     {% if page.reveal.title_footer %}
     dependencies.push({ src: '{{ "/plugin/title-footer/title-footer.js" | relative_url }}', async: true, callback: function() { if (window.title_footer && window.title_footer.initialize) { title_footer.initialize(); } } });
+    {% endif %}
+
+    {% if page.reveal.zero_indexed_slide_number %}
+    // Opt-in: render slide numbers as 0-indexed URL-fragment style ("h.v"
+    // inside vertical stacks, just "h" on flat slides). Decks enable via
+    // `reveal.zero_indexed_slide_number: true` in front matter.
+    revealConfig.slideNumber = 'h.v';
+    dependencies.push({ src: '{{ "/js/slide-number-zero-indexed.js" | relative_url }}', async: true });
     {% endif %}
 
     {% if page.reveal.additional_dependencies %}

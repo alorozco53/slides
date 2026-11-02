@@ -130,6 +130,52 @@ All keys under `reveal:` in front matter are passed through to
 The defaults live in `_config.yml` under
 `defaults > scope.type: presentations`.
 
+## Speaker notes, numbering, and PDF export
+
+Speaker view (`S`) supports inline notes and optional sidecar notes. Put
+sidecar notes in `_presentations/<deck>.notes.md` with this format:
+
+```markdown
+---
+published: false
+---
+
+## Title
+Opening speaker notes, including **Markdown** and math.
+```
+
+Each `##` title matches a slide's `data-menu-title`. The local Jekyll plugin
+`_plugins/inject_notes.rb` inserts notes during the build; matching sidecar
+entries replace inline notes on that slide. Unmatched keys produce a warning.
+Leave `##` headings for slide delimiters; use `###` for headings inside notes.
+When only notes change during local serving, touch the deck to force a rebuild.
+
+Enable URL-matching, zero-indexed slide numbers with:
+
+```yaml
+reveal:
+  zero_indexed_slide_number: true
+```
+
+The slide number is `h.v` for vertical stacks, `h` for horizontal slides, and
+`v` for a single-column deck. The shared script loads automatically.
+
+Use the menu's **Export** tab to open `?print-pdf`, then the browser's print
+dialog to save a PDF. The shared head selects the print stylesheet and hides
+presentation chrome. Set `reveal.print_button: false` to omit the Export tab.
+
+Build with plain Jekyll (`bundle exec jekyll build`), keeping local plugins
+enabled. GitHub Pages safe builds do not execute the custom notes injector;
+deploy the generated static output when these notes are needed.
+
+Run `bundle exec ruby scripts/verify_presentation_engine.rb` to check note
+injection/override, numbering, speaker/math plugins, and print/export wiring
+against a temporary two-slide fixture.
+
+MathJax and Google Fonts are already integrated. Their engines/styles may be
+downloaded externally; local Reveal plugins and several font families are
+bundled. Private deployments should select only the requested deck and assets.
+
 ## Repo layout
 
 ```
