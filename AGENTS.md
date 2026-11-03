@@ -80,6 +80,17 @@ The server picks up most changes via hot-reload; restart after editing
   and
   [`_presentations/example-markdown-deck.html`](_presentations/example-markdown-deck.html).
 
+## Shared engine capabilities
+
+- Keep `_plugins/inject_notes.rb`, `js/slide-number-zero-indexed.js`, and the
+  print/export integration in `presentation/head.html` and `scripts.html`
+  aligned with the private presentations engine; do not copy private content.
+- Build with the plain Jekyll Gemfile so project-local Ruby plugins run.
+- For sidecar notes, use `<deck>.notes.md` with `published: false`, matching
+  H2 headings to `data-menu-title`. Verify an injected note in speaker view.
+- Enable URL-matching numbers with `reveal.zero_indexed_slide_number: true`.
+- Check the Export menu and `?print-pdf` after shared layout changes.
+
 ## Branching
 
 This repo currently uses a flat `main` branch — **no dash-depth hierarchy**

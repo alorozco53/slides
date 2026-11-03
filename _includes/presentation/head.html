@@ -21,3 +21,33 @@
 <link rel="stylesheet" href="{{ css_path | relative_url }}">
   {% endfor %}
 {% endif %}
+
+<!-- Print stylesheet (reveal.js canonical pattern).
+     Visit any deck with `?print-pdf` to get a paginated, browser-printable
+     version where each slide becomes one PDF page. -->
+<script>
+  (function () {
+    var link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = /print-pdf/gi.test(window.location.search)
+      ? '{{ "/css/print/pdf.css" | relative_url }}'
+      : '{{ "/css/print/paper.css" | relative_url }}';
+    document.getElementsByTagName('head')[0].appendChild(link);
+  })();
+</script>
+
+<!-- Hide all deck chrome (back-to-home, quick-links, print button, side-menu
+     opener) in print-pdf mode AND when actually printing. -->
+<style>
+  body.print-pdf .reveal-chrome,
+  body.print-pdf .slide-menu-button {
+    display: none !important;
+  }
+  @media print {
+    .reveal-chrome,
+    .slide-menu-button {
+      display: none !important;
+    }
+  }
+</style>
